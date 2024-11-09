@@ -8,6 +8,10 @@ app.use(express.json());
 
 // Rota para receber dados do ESP32
 app.post('/data', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Permitir qualquer origem
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
   const sensorData = req.body;
   if (data.length == 5) {
     data.shift();
@@ -21,6 +25,10 @@ app.post('/data', (req, res) => {
 
 // Rota para enviar os dados
 app.get('/getData', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Permitir qualquer origem
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
   var d = { valor: data };
   res.json(d);
 });
