@@ -13,11 +13,11 @@ app.post('/data', (req, res) => {
   const sensorData = req.body;
   if (data.length == 10) {
     data.shift();
-  }
+  } 
 if(sensorData.sensorValue <2000){
   sensorData.sensorValue-=600;
 }
-  data.push((100-(sensorData.sensorValue/4095)*100));
+  data.push(parseInt((100-(sensorData.sensorValue/4095)*100)));
   console.log("Dados recebidos do ESP32:", sensorData);
 
   // Responde com uma mensagem de sucesso
