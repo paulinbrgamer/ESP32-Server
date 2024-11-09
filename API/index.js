@@ -26,5 +26,4 @@ app.get('/getData', (req, res) => {
   var d = { valor: data };
   res.status(200).json(d);
 });
-module.exports = app;
-
+app.listen(process.env.PORT||3000)
