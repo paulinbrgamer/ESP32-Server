@@ -25,7 +25,7 @@ app.get('/getData', (req, res) => {
   var d = { valor: data };
   res.json(d);
 });
-
+module.exports = app;
 // Inicia o servidor
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
