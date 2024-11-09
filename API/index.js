@@ -24,7 +24,7 @@ app.post('/data', (req, res) => {
 // Rota para enviar os dados
 app.get('/getData', (req, res) => {
   var d = { valor: data };
-  res.json(d);
+  res.status(200).json(d);
 });
 module.exports = app;
 
