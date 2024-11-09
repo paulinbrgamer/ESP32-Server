@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: 'http://127.0.0.1:3000', // Permitir requisições do Live Server
+  methods: ['GET', 'POST'], // Permitir apenas os métodos necessários
+  allowedHeaders: ['Content-Type'] // Permitir cabeçalhos específicos
+}));
+
 
 var data = [0, 0, 0, 0, 0];
 app.use(express.json());
+
 
 // Rota para receber dados do ESP32
 app.post('/data', (req, res) => {
