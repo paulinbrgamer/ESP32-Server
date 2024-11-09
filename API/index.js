@@ -11,7 +11,7 @@ app.use(express.json());
 // Rota para receber dados do ESP32
 app.post('/data', (req, res) => {
   const sensorData = req.body;
-  if (data.length == 5) {
+  if (data.length == 10) {
     data.shift();
   }
   data.push(sensorData.sensorValue);
