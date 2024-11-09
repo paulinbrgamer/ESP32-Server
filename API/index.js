@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const port = process.env.PORT || 3000; // Para Glitch, usamos a variável de ambiente PORT
 app.use(cors());
 
 var data = [0, 0, 0, 0, 0];
@@ -26,7 +25,4 @@ app.get('/getData', (req, res) => {
   res.json(d);
 });
 module.exports = app;
-// Inicia o servidor
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
-});
+
