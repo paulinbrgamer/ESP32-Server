@@ -15,7 +15,7 @@ app.post('/data', (req, res) => {
     data.shift();
   }
 
-  data.push(((sensorData.sensorValue*-1/4095)*100)-100);
+  data.push(((sensorData.sensorValue/4095)*100)-100);
   console.log("Dados recebidos do ESP32:", sensorData);
 
   // Responde com uma mensagem de sucesso
