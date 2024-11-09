@@ -1,11 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-app.use(cors({
-  origin: 'http://127.0.0.1:3000', // Permitir requisições do Live Server
-  methods: ['GET', 'POST'], // Permitir apenas os métodos necessários
-  allowedHeaders: ['Content-Type'] // Permitir cabeçalhos específicos
-}));
+app.use(cors());
 
 
 var data = [0, 0, 0, 0, 0];
