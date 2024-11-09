@@ -4,7 +4,7 @@ const cors = require('cors');
 app.use(cors());
 
 
-var data = [0, 0, 0, 0, 0];
+var data = [];
 app.use(express.json());
 
 
@@ -14,7 +14,7 @@ app.post('/data', (req, res) => {
   if (data.length == 10) {
     data.shift();
   }
-  data.push(sensorData.sensorValue);
+  data.push((sensorData.sensorValue/4095)*100);
   console.log("Dados recebidos do ESP32:", sensorData);
 
   // Responde com uma mensagem de sucesso
