@@ -15,7 +15,7 @@ app.post('/data', (req, res) => {
     data.shift();
   } 
 if(sensorData.sensorValue <2300){
-  sensorData.sensorValue-=200;
+  sensorData.sensorValue-=400;
 }
   data.push(parseInt((100-(sensorData.sensorValue/4095)*100)));
   console.log("Dados recebidos do ESP32:", sensorData);
