@@ -44,4 +44,8 @@ app.get('/getData', (req, res) => {
   var d = { valor: data };
   res.status(200).json(d);
 });
+app.get('/getData2',(req,res)=>{
+  var d2 = {tempAr:dataTempDoAr,umidAr:dataUmidadeDoAr}
+  res.status(200).json(d2);
+})
 app.listen(process.env.PORT||3000)
