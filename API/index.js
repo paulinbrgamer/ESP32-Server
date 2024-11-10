@@ -14,7 +14,7 @@ app.post('/data', (req, res) => {
   if (data.length == 10) {
     data.shift();
   } 
-if(sensorData.sensorValue <2300){
+if(sensorData.sensorValue <2600){
   sensorData.sensorValue-=400;
 }
   data.push(parseInt((100-(sensorData.sensorValue/4095)*100)));
