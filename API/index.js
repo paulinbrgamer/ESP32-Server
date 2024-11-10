@@ -5,9 +5,22 @@ app.use(cors());
 
 
 var data = [];
+var dataUmidadeDoAr = []
+var dataTempDoAr = []
 app.use(express.json());
 
-
+// Rota para receber dados do Arduino
+app.post('/data2',(req,res)=>{
+  const sensorData = req.body;
+  if (dataUmidadeDoAr.length == 10) {
+    dataUmidadeDoAr.shift();
+  }
+  if (dataTempDoAr.length == 10) {
+    dataTempDoAr.shift();
+  } 
+  dataUmidadeDoAr.push(sensorData.umidAr)
+  dataTempDoAr.push(sensorData.tempAr)
+})
 // Rota para receber dados do ESP32
 app.post('/data', (req, res) => {
   const sensorData = req.body;
