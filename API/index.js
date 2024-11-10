@@ -20,6 +20,8 @@ app.post('/data2',(req,res)=>{
   } 
   dataUmidadeDoAr.push(sensorData.umidAr)
   dataTempDoAr.push(sensorData.tempAr)
+  // Responde com uma mensagem de sucesso
+  res.status(200).send({ message: "Dados recebidos com sucesso!" });
 })
 // Rota para receber dados do ESP32
 app.post('/data', (req, res) => {
