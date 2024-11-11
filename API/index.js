@@ -24,9 +24,6 @@ app.post('/data', (req, res) => {
     dataTempDoAr.shift();
   } 
 
-  if(sensorData.sensorValue <2600){
-    sensorData.sensorValue-=400;
-  }
   dataUmidadeDoAr.push(sensorData.umidAr)
   dataTempDoAr.push(sensorData.tempAr)
   data.push(parseInt((100-(sensorData.sensorValue/4095)*100)));
